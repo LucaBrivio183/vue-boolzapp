@@ -100,6 +100,10 @@ i:hover {
     overflow-y: auto;
 }
 
+#contact-list li:hover {
+    background-color: #e9ebeb;
+}
+
 main footer i{
     color: black;
 }
