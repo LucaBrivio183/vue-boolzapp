@@ -53,6 +53,7 @@ header {
 }
 
 .user-img {
+    min-width: 3.125rem;
     width: 3.125rem;
     height: 3.125rem;
     overflow: hidden;

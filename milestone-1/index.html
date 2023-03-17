@@ -23,7 +23,7 @@
                 <header class="d-flex justify-content-between align-items-center p-3">
                     <div class="d-flex align-items-center gap-1"> <!-- header left content -->
                         <div class="user-img"> <!-- user img -->
-                            <img src="" alt="">
+                            <img :src="user.img" alt="user-img">
                         </div>
                         <span id="user-name">{{user.name}}</span>  <!-- user name -->
                     </div>
@@ -47,15 +47,15 @@
                     <input type="text" class="flex-grow-1 px-4 py-1" placeholder="Cerca o inizia una nuova chat" id="search-chat">
                 </div>
                 <ul id="contact-list" class="flex-grow-1 d-flex flex-column">
-                    <li class="d-flex justify-content-between align-items-start gap-1 ps-4 py-1">
+                    <li v-for="(item,index) in contacts" class="d-flex justify-content-between align-items-start gap-1 ps-4 py-1">
                         <div class="user-img"> <!-- contact img -->
-                            <img src="" alt="">
+                            <img :src="contacts[index].avatar" alt="">
                         </div>
                         <div class="flex-grow-1">
-                            <span class="">contact name</span><br><!-- contact name -->
+                            <span class="">{{contacts[index].name}}</span><br><!-- contact name -->
                             <small class="">Ultimo messaggio inviato</small>
                         </div>
-                        <small class="px-1">ora</small>
+                        <small class="px-1">12:00</small>
                     </li>
                 </ul>
             </aside>
