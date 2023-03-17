@@ -3,12 +3,13 @@ const  { createApp } = Vue; //initialize Vue
 createApp ({
     data() {  //Vue section for data
         return {
+            activeContact: 0, //variable index for checking the right active contact
+            message: '',  //messagge sendable linked to chat input field
+            searchKey: '', //search text input listener
             user: { //user info
                 name:'Sofia',
                 img: '../img/avatar_io.jpg',
             },
-            activeContact: 0, //variable index for checking the right active contact
-            message: '',  //messagge sendable linked to chat input field
             contacts: [ //contacts array with info and messages 
                 {
                     name: 'Michele',
@@ -202,5 +203,13 @@ createApp ({
                 }
                 this.contacts[activeContact].messages.push(newMessage)
         },
+        filterList() {
+            if (this.searchKey !== '') {
+                return this.contacts.name.filter(element => element.toLowerCase().includes(this.searchKey.toLowerCase()));
+            } else {
+                return this.contacts;
+            }
+
+        }
         }
 }).mount('#app');
