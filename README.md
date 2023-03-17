@@ -40,27 +40,41 @@ Il progetto si basa su una serie di array statici e non su una base dati esterna
 - Richiamare la messaggistica corretta all'interno della main chat section
 
 - Assegnare correttamente la classe Sent/Received ai messaggi per applicare il corretto stile css
-
-
 ### Features
 - creazione di messaggi dinamica con funzione v-for
 - selezione della chat attiva basata sul click del contatto
 - cambiamento dinamico delle informazioni contatto
 - creata funzione per creare lo status dei messaggi
 - assegnazione dinamica della classe sent/received controllando con la funzione
-
-
-
-
 ## Milestone 3
 
 - **Aggiunta di un messaggio:** l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 - **Risposta dall’interlocutore:** ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
-## Roadmap
+### Roadmap
 
 - creazione di una variabile dinamica reattiva, collegata all'input text html
 
 - creazione di una funzione per aggiungere all' array di messaggi corrispondente nell' oggetto contatto corretto
 
 - creare una funzione di risposta automatica
+
+### Features
+- corretto invio tramite push nell'array dei messaggi inviati dall'utente,  aggiunta cancellazione del campo dopo la pressione di invio
+
+- messaggio automatico di risposta ('Ok') con timeout di 3 secondi
+
+## Milestone 4
+
+- **Ricerca utenti:** scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+### Roadmap
+
+- creazione di una variabile dinamica reattiva, collegata all'input text html di ricerca
+
+- controllare per tutto l'array della corrispondeza di caratteri
+
+- creare un nuovo array filtrato della corrispondenza
+
+- ciclare attraverso il nuovo array filtrato
+
