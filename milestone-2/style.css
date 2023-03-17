@@ -1,0 +1,140 @@
+/**************************************************
+
+reset 
+
+***************************************************/
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[v-cloak] {
+    display:  none
+}
+
+/*********************************************************
+
+common 
+
+************************************************************/
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background: rgb(6,150,136);
+    background: linear-gradient(180deg, rgba(6,150,136,1) 15%, rgba(219,219,210,1) 15%);
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    height: 95%;
+}
+
+img {
+    object-fit: center;
+    width: 100%;
+}
+
+aside{
+    width: calc(100%/3);
+    border-right: 1px solid #d5d5d4;
+    background-color: white;
+}
+
+main {
+    width: calc((100%/3)*2);
+}
+
+header {
+    background-color: #eaeaea;
+}
+
+.user-img {
+    min-width: 3.125rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    overflow: hidden;
+    background-color: lightgray;
+    border-radius: 100%;
+}
+
+i {
+    color: gray;
+    opacity: 0.8;
+    font-size: 1.25rem;
+}
+
+i:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#activate-desktop-notification{
+    background-color: #8edafa;
+}
+
+#activate-desktop-notification i{
+    color: #8edafa;
+}
+
+#activate-desktop-notification .user-img{
+    background-color: white;
+}
+
+#search-bar>*{
+    border: .0625rem solid lightgray;
+    background-color: white;
+}
+
+#search-bar i{
+    color: black;
+    opacity: 0.7;
+}
+
+#contact-list {
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+}
+
+main footer i{
+    color: black;
+}
+
+main footer {
+    background-color: #f3eeea;
+}
+
+#active-chat{
+    background-image: url(../img/mine.jpg);
+    background-position: cover;
+    padding: 3.4375rem 5.9375rem;
+    overflow-y: auto;
+}
+
+#active-chat .message {
+    border-radius: 15px;
+    width: 40%;
+    position: relative;
+}
+
+#active-chat .sent {
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+#active-chat .received {
+    align-self: flex-start;
+    background-color: white;
+}
+
+#active-chat .message .time {
+    font-size: .625rem;
+    color: gray;
+    position: absolute;
+    right: .3125rem;
+    bottom: .3125rem;
+}

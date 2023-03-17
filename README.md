@@ -21,3 +21,22 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 - Creare la struttura HTML/CSS basata su framework bootstrap, replicando lo screenshot allegato.
 
 - Creare la struttura JavaScript, contentente la struttura dati statica, costrutita tramite VUE js framework.
+
+## Features
+
+- Grafica responsiva creata tramite Bootstrap framework
+- Menù delle conversazioni creato interattivamente tramite Vuejs framework
+- Struttura dati statica presente in js
+
+## Milestone 2
+
+Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+Click sul contatto mostra la conversazione del contatto cliccato
+
+## Roadmap
+
+- Creazione di un indice variabile per tracciare correttamente la chat attiva
+
+- Richiamare la messaggistica corretta all'interno della main chat section
+
+- Assegnare correttamente la classe Sent/Received ai messaggi per applicare il corretto stile css
