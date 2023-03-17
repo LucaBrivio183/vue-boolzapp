@@ -48,8 +48,16 @@ img {
 }
 
 aside{
-    padding: 0;
     width: calc(100%/3);
+    border-right: 1px solid #d5d5d4;
+}
+
+main {
+width: calc((100%/3)*2);
+}
+
+header {
+    background-color: #eaeaea;
 }
 
 .user-img {
@@ -97,4 +105,17 @@ i:hover {
     list-style: none;
     padding: 0;
     overflow-y: auto;
+}
+
+main footer i{
+    color: black;
+}
+
+main footer {
+    background-color: #f3eeea;
+}
+
+#active-chat{
+    background-image: url(../img/mine.jpg);
+    background-position: cover;
 }

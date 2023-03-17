@@ -55,8 +55,33 @@
                     </li>
                 </ul>
             </aside>
-            <main class="h-100 flex-grow-1"> <!-- chat  section -->
+            <main class="h-100 d-flex flex-column"> <!-- chat  section -->
+                <header class="d-flex justify-content-between align-items-center p-3">
+                    <div class="d-flex align-items-center gap-1"> <!-- header left content -->
+                        <div class="user-img"> <!--active contact img -->
+                            <img src="" alt="">
+                        </div>
+                        <span id="user-name">   </span><br><!--active contact name -->
+                        <small> Ultimo messaggio inviato </small>
+                    </div>
+                    <div class="d-flex align-items-center gap-3"><!-- header right content -->
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </header>
+                <div id="active-chat" class="flex-grow-1">
 
+                </div>
+                <footer class="d-flex justify-content-between align-items-center py-1">
+                    <div class="px-4 py-1">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <input type="text" class="flex-grow-1 px-4 py-1" placeholder="Scrivi un messaggio">
+                    <div class="px-4 py-1">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </footer>
             </main>
     </div>
     <!-- vue js cdn -->
