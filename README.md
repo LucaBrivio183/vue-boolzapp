@@ -7,7 +7,7 @@ Il progetto si basa su una serie di array statici e non su una base dati esterna
 
 ## Screenshots
 
-![App Screenshot](/IMG/boolzapp-reference.png)
+![App Screenshot](/img/boolzapp-reference.png)
 
 
 ## Milestone 1
