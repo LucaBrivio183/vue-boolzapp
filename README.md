@@ -12,17 +12,17 @@ Il progetto si basa su una serie di array statici e non su una base dati esterna
 
 ## Milestone 1
 
-Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
+- **Replica della grafica** con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
+- **Visualizzazione dinamica della lista contatti:** tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 
 
-## Roadmap
+### Roadmap
 
 - Creare la struttura HTML/CSS basata su framework bootstrap, replicando lo screenshot allegato.
 
 - Creare la struttura JavaScript, contentente la struttura dati statica, costrutita tramite VUE js framework.
 
-## Features
+### Features
 
 - Grafica responsiva creata tramite Bootstrap framework
 - Menù delle conversazioni creato interattivamente tramite Vuejs framework
@@ -30,13 +30,37 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 
 ## Milestone 2
 
-Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-Click sul contatto mostra la conversazione del contatto cliccato
+- **Visualizzazione dinamica dei messaggi:** tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+- **Click sul contatto** mostra la conversazione del contatto cliccato
 
-## Roadmap
+### Roadmap
 
 - Creazione di un indice variabile per tracciare correttamente la chat attiva
 
 - Richiamare la messaggistica corretta all'interno della main chat section
 
 - Assegnare correttamente la classe Sent/Received ai messaggi per applicare il corretto stile css
+
+
+### Features
+- creazione di messaggi dinamica con funzione v-for
+- selezione della chat attiva basata sul click del contatto
+- cambiamento dinamico delle informazioni contatto
+- creata funzione per creare lo status dei messaggi
+- assegnazione dinamica della classe sent/received controllando con la funzione
+
+
+
+
+## Milestone 3
+
+- **Aggiunta di un messaggio:** l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+- **Risposta dall’interlocutore:** ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+## Roadmap
+
+- creazione di una variabile dinamica reattiva, collegata all'input text html
+
+- creazione di una funzione per aggiungere all' array di messaggi corrispondente nell' oggetto contatto corretto
+
+- creare una funzione di risposta automatica
