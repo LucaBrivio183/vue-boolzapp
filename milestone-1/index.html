@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- local css files -->
     <link rel="stylesheet" href="style.css">
     <title>Boolzapp</title>
 </head>
-<body class="debug">
+<body>
     <!-- vue js app container -->
     <div class="container d-flex" id="app" v-cloak>
             <aside class="h-100 flex-shrink-0 d-flex flex-column">  <!-- user info with conversation -->
@@ -39,8 +43,8 @@
                     </div>   
                 </div>
                 <div class="d-flex mb-3 p-2" id="search-bar"><!-- search field -->
-                    <button class="px-4 py-1" type="button" id=""><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="text" class="flex-grow-1 px-4 py-1" placeholder="Cerca o inizia una nuova chat">
+                    <label for="search-chat" class="px-4 py-1" id=""><i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input type="text" class="flex-grow-1 px-4 py-1" placeholder="Cerca o inizia una nuova chat" id="search-chat">
                 </div>
                 <ul id="contact-list" class="flex-grow-1 d-flex flex-column">
                     <li class="d-flex justify-content-between align-items-start gap-1 ps-4 py-1">
@@ -70,10 +74,21 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </header>
-                <div id="active-chat" class="flex-grow-1">
-
+                <div id="active-chat" class="flex-grow-1 d-flex flex-column gap-1">
+                    <div class="message sent py-3 px-4">
+                        Hai portato a spasso il cane?
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message sent py-3 px-4">
+                        ricordati di stendere i panni?
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message received py-3 px-4">
+                        tutto fatto!
+                        <small class="time">15:30</small>
+                    </div>
                 </div>
-                <footer class="d-flex justify-content-between align-items-center py-1">
+                <footer class="d-flex justify-content-between align-items-center py-2">
                     <div class="px-4 py-1">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>

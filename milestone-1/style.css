@@ -13,16 +13,6 @@ reset
     display:  none
 }
 
-/* debug */
-
-.debug main {
-    background-color: blue;
-}
-
-.debug aside {
-    background-color: red;
-}
-
 /*********************************************************
 
 common 
@@ -36,6 +26,7 @@ body {
     align-items: center;
     background: rgb(6,150,136);
     background: linear-gradient(180deg, rgba(6,150,136,1) 15%, rgba(219,219,210,1) 15%);
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -50,10 +41,11 @@ img {
 aside{
     width: calc(100%/3);
     border-right: 1px solid #d5d5d4;
+    background-color: white;
 }
 
 main {
-width: calc((100%/3)*2);
+    width: calc((100%/3)*2);
 }
 
 header {
@@ -69,7 +61,7 @@ header {
 }
 
 i {
-    color: white;
+    color: gray;
     opacity: 0.8;
     font-size: 1.25rem;
 }
@@ -118,4 +110,30 @@ main footer {
 #active-chat{
     background-image: url(../img/mine.jpg);
     background-position: cover;
+    padding: 3.4375rem 5.9375rem;
+    overflow-y: auto;
+}
+
+#active-chat .message {
+    border-radius: 15px;
+    width: 40%;
+    position: relative;
+}
+
+#active-chat .sent {
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+#active-chat .received {
+    align-self: flex-start;
+    background-color: white;
+}
+
+#active-chat .message .time {
+    font-size: .625rem;
+    color: gray;
+    position: absolute;
+    right: .3125rem;
+    bottom: .3125rem;
 }
