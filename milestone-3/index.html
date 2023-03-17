@@ -77,16 +77,18 @@
                     </div>
                 </header>
                 <div id="active-chat" class="flex-grow-1 d-flex flex-column gap-1">
+                    <!-- message template copied for each message -->
                     <div v-for="(item,index) in contacts[activeContact].messages" :class="checkMessageStatus(index,activeContact)" class="message sent py-3 px-4">
                         {{contacts[activeContact].messages[index].message}}
-                        <small class="time">15:30</small>
+                        <small class="time">15:30</small> <!-- to  be changed dynamic-->
                     </div>
                 </div>
                 <footer class="d-flex justify-content-between align-items-center py-2">
                     <div class="px-4 py-1">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
-                    <input type="text" class="flex-grow-1 px-4 py-1" placeholder="Scrivi un messaggio">
+                    <!-- input for messages-->
+                    <input type="text" class="flex-grow-1 px-4 py-1" placeholder="Scrivi un messaggio" v-model="message" @keyup.enter="sendMessage(activeContact)" >
                     <div class="px-4 py-1">
                         <i class="fa-solid fa-microphone"></i>
                     </div>

@@ -3,12 +3,13 @@ const  { createApp } = Vue; //initialize Vue
 createApp ({
     data() {  //Vue section for data
         return {
-            user: {
+            user: { //user info
                 name:'Sofia',
                 img: '../img/avatar_io.jpg',
             },
-            activeContact: 0,
-            contacts: [
+            activeContact: 0, //variable index for checking the right active contact
+            message: '',  //messagge sendable linked to chat input field
+            contacts: [ //contacts array with info and messages 
                 {
                     name: 'Michele',
                     avatar: '../img/avatar_1.jpg',
@@ -174,14 +175,22 @@ createApp ({
         }     
     }, 
     methods: { //Vue section for function
-        selectChat(index){
+        selectChat(index){ //select active chat  from chat left section
             this.activeContact = index;
         },
-        checkMessageStatus(index,activeContact) {
+        checkMessageStatus(index,activeContact) { //return a string value for assigning sent/received css  class
             if (this.contacts[activeContact].messages[index].status === 'sent') {
                 return 'sent'
             }
                 return 'received'
         },
+        sendMessage(activeContact){//push the currently written message in the messages object
+                const newMessage = {
+                    date: new Date(),
+                    message: this.message,
+                    status: 'sent'
+                }
+                this.contacts[activeContact].messages.push(newMessage)
+            },
         }
 }).mount('#app');
