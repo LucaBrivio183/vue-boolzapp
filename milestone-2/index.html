@@ -77,7 +77,7 @@
                     </div>
                 </header>
                 <div id="active-chat" class="flex-grow-1 d-flex flex-column gap-1">
-                    <div v-for="(item,index) in contacts[activeContact].messages"class="message sent py-3 px-4">
+                    <div v-for="(item,index) in contacts[activeContact].messages" :class="checkMessageStatus(index,activeContact)" class="message sent py-3 px-4">
                         {{contacts[activeContact].messages[index].message}}
                         <small class="time">15:30</small>
                     </div>

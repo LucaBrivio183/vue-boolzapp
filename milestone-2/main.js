@@ -177,5 +177,11 @@ createApp ({
         selectChat(index){
             this.activeContact = index;
         },
-    },   
+        checkMessageStatus(index,activeContact) {
+            if (this.contacts[activeContact].messages[index].status === 'sent') {
+                return 'sent'
+            }
+                return 'received'
+        },
+        }
 }).mount('#app');
