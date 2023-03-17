@@ -47,7 +47,7 @@
                     <input type="text" class="flex-grow-1 px-4 py-1" placeholder="Cerca o inizia una nuova chat" id="search-chat">
                 </div>
                 <ul id="contact-list" class="flex-grow-1 d-flex flex-column">
-                    <li v-for="(item,index) in contacts" @click="selectChat(index,$event)" class="d-flex justify-content-between align-items-start gap-1 ps-4 py-1">
+                    <li v-for="(item,index) in contacts" @click="selectChat(index,$event)" class="d-flex justify-content-between align-items-start gap-1 ps-4 py-1 border-1 border-bottom border-opacity-25 border-secondary">
                         <div class="user-img"> <!-- contact img -->
                             <img :src="contacts[index].avatar" alt="">
                         </div>
