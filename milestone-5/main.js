@@ -203,12 +203,15 @@ createApp ({
                 }
                 this.contacts[activeContact].messages.push(newMessage)
         },
+        getVisibility(index){
+            return  this.contacts[index].visible
+        },
         search() {
-            this.contacts.forEach((item) => {
-                if (item.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
-                   item.visible = true
+            this.contacts.forEach((contact) => {
+                if (contact.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
+                   contact.visible = true
                 } else {
-                    item.visible = false
+                    contact.visible = false
                 }
             })
         },
