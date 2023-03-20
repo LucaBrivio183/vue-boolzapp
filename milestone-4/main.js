@@ -212,5 +212,9 @@ createApp ({
                 }
             })
         },
+        getLastMessage(messages){
+            const lastMessage = messages[messages.length - 1]
+            return `${lastMessage.message}`  
+        },
     },
 }).mount('#app');
