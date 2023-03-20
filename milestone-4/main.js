@@ -203,13 +203,12 @@ createApp ({
                 }
                 this.contacts[activeContact].messages.push(newMessage)
         },
-        filterList() {
-            if (this.searchKey !== '') {
-                return this.contacts.name.filter(element => element.toLowerCase().includes(this.searchKey.toLowerCase()));
+        search(){            
+            if(this.searchKey.trim() !== ''){
+                return this.contacts.filter(item => item.name.toLowerCase().includes(this.searchKey.toLowerCase()))
             } else {
-                return this.contacts;
+                return this.contacts
             }
-
-        }
-        }
+        },
+    }
 }).mount('#app');
