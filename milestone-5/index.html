@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- local css files -->
+    <link rel="stylesheet" href="style.css">
+    <title>Boolzapp</title>
+</head>
+<body>
+    <!-- vue js app container -->
+    <div class="container d-flex" id="app" v-cloak>
+            <aside class="h-100 flex-shrink-0 d-flex flex-column">  <!-- user info with conversation -->
+                <header class="d-flex justify-content-between align-items-center p-3">
+                    <div class="d-flex align-items-center gap-1"> <!-- header left content -->
+                        <div class="user-img"> <!-- user img -->
+                            <img :src="user.img" alt="user-img">
+                        </div>
+                        <span id="user-name">{{user.name}}</span>  <!-- user name -->
+                    </div>
+                    <div class="d-flex align-items-center gap-3"><!-- header right content -->
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </header>
+                <div class="d-flex align-items-center gap-3 p-4" id="activate-desktop-notification">
+                    <div class="user-img d-flex align-items-center justify-content-center"> <!-- using class just cause it's the same  formatting -->
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="flex-grow-1 d-flex flex-column"><!-- notification staticcontent-->
+                        <span class="">Ricevi le notifiche di nuovi messaggi</span>
+                        <a class="">Attiva notifiche desktop</a>
+                    </div>   
+                </div>
+                <div class="d-flex mb-3 p-2" id="search-bar"><!-- search field -->
+                    <label for="search-chat" class="px-4 py-1" id=""><i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input type="text" v-model="searchKey" @keyup="search" class="flex-grow-1 px-4 py-1" placeholder="Cerca o inizia una nuova chat" id="search-chat">
+                </div>
+                <ul id="contact-list" class="flex-grow-1 d-flex flex-column">
+                    <li v-for="(item,index) in contacts"  v-show="item.visible" @click="selectChat(index,$event)" class="d-flex justify-content-between align-items-start gap-1 ps-4 py-1 border-1 border-bottom border-opacity-25 border-secondary">
+                        <div class="user-img"> <!-- contact img -->
+                            <img :src="contacts[index].avatar" alt="">
+                        </div>
+                        <div class="flex-grow-1 d-flex flex-column">
+                            <span class="">{{contacts[index].name}}</span><!-- contact name -->
+                            <small class="">{{ getLastMessage(item.messages) }}</small>
+                        </div>
+                        <small class="">12:00</small>
+                    </li>
+                </ul>
+            </aside>
+            <main class="h-100 d-flex flex-column"> <!-- chat  section -->
+                <header class="d-flex justify-content-between align-items-center p-3">
+                    <div class="d-flex align-items-center gap-1"> <!-- header left content -->
+                        <div class="user-img"> <!--active contact img -->
+                            <img :src="contacts[activeContact].avatar" alt="">
+                        </div>
+                        <div class="d-flex flex-column">
+                            <span id="user-name">{{contacts[activeContact].name}}</span><!--active contact name -->
+                            <small>Ultimo accesso oggi alle 12:00</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3"><!-- header right content -->
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </header>
+                <div id="active-chat" class="flex-grow-1 d-flex flex-column gap-1">
+                    <!-- message template copied for each message -->
+                    <div v-for="(item,index) in contacts[activeContact].messages" :class="checkMessageStatus(index,activeContact)" class="message sent py-3 px-4">
+                        {{contacts[activeContact].messages[index].message}}
+                        <small class="time">15:30</small> <!-- to  be changed dynamic-->
+                    </div>
+                </div>
+                <footer class="d-flex justify-content-between align-items-center py-2">
+                    <div class="px-4 py-1">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <!-- input for messages-->
+                    <input type="text" class="flex-grow-1 px-4 py-1" placeholder="Scrivi un messaggio" v-model="message" @keyup.enter="sendMessage(activeContact)" >
+                    <div class="px-4 py-1">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </footer>
+            </main>
+    </div>
+    <!-- vue js cdn -->
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <!-- local js files -->
+    <script src="main.js"></script>
+    <!-- bootstrap js cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

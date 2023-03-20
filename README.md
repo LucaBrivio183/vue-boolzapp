@@ -78,3 +78,19 @@ Il progetto si basa su una serie di array statici e non su una base dati esterna
 
 - ciclare attraverso il nuovo array filtrato
 
+### Features
+
+- Opzione di ricerca filtrata reattiva
+
+- grafica responsiva migliorata
+
+- aggiunta della preview dell'ultimo messaggio reattiva nalla lista contatti
+
+## Milestone 5
+
+- **Cancella messaggio:** cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+
+- **Visualizzazione ora e ultimo messaggio inviato/ricevuto:** nella lista dei contatti 
+
+
+
