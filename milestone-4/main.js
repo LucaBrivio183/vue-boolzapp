@@ -113,7 +113,7 @@ createApp ({
                 },
                 {
                     name: 'Claudia',
-                    avatar: '../img/avatar_5.jpg',
+                    avatar: '../img/avatar_6.jpg',
                     visible: true,
                     messages: [
                         {
@@ -203,12 +203,14 @@ createApp ({
                 }
                 this.contacts[activeContact].messages.push(newMessage)
         },
-        search(){            
-            if(this.searchKey.trim() !== ''){
-                return this.contacts.filter(item => item.name.toLowerCase().includes(this.searchKey.toLowerCase()))
-            } else {
-                return this.contacts
-            }
+        search() {
+            this.contacts.forEach((item) => {
+                if (item.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
+                    item.visible = true
+                } else {
+                    item.visible = false
+                }
+            })
         },
-    }
+    },
 }).mount('#app');
