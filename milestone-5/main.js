@@ -213,8 +213,12 @@ createApp ({
             })
         },
         getLastMessage(messages){
-            const lastMessage = messages[messages.length - 1];
-            return `${lastMessage.message}`;
+            if ( messages[messages.length]  !=  0 ) {
+                const lastMessage = messages[messages.length - 1];
+                return `${lastMessage.message}`;
+            } else {
+                return ``;
+            }
         },
         toggleDropDown(event){
             event.target.nextElementSibling.classList.toggle('show');  
