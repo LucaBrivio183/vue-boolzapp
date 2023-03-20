@@ -203,9 +203,6 @@ createApp ({
                 }
                 this.contacts[activeContact].messages.push(newMessage)
         },
-        getVisibility(index){
-            return  this.contacts[index].visible
-        },
         search() {
             this.contacts.forEach((contact) => {
                 if (contact.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
