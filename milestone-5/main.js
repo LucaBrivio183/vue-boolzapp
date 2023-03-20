@@ -213,11 +213,14 @@ createApp ({
             })
         },
         getLastMessage(messages){
-            const lastMessage = messages[messages.length - 1]
-            return `${lastMessage.message}`  
+            const lastMessage = messages[messages.length - 1];
+            return `${lastMessage.message}`;
         },
         toggleDropDown(event){
-                event.target.nextElementSibling.classList.toggle('show')   
+            event.target.nextElementSibling.classList.toggle('show');  
+        },
+        deleteMessage(index,activeContact){
+            this.contacts[activeContact].messages.splice(index, 1);
         },
     },
 }).mount('#app');
