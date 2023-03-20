@@ -72,6 +72,8 @@ i:hover {
     opacity: 1;
 }
 
+/* desktop notification static content */
+
 #activate-desktop-notification{
     background-color: #8edafa;
 }
@@ -93,6 +95,8 @@ i:hover {
     color: black;
     opacity: 0.7;
 }
+
+/* contact list styles */
 
 #contact-list {
     list-style: none;
@@ -123,6 +127,9 @@ main footer i{
 main footer {
     background-color: #f3eeea;
 }
+
+
+/* style of active chat on main for messages */
 
 #active-chat{
     background-image: url(../img/mine.jpg);
@@ -162,6 +169,8 @@ small {
     right: .3125rem;
     bottom: .3125rem;
 }
+
+/* dropdown menu styles */
 
 #active-chat .message i {
     display: none;

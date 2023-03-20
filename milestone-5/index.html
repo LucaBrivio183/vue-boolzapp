@@ -82,11 +82,11 @@
                     <!-- message template copied for each message -->
                     <div v-for="(item,index) in contacts[activeContact].messages" :class="checkMessageStatus(index,activeContact)" class="message">
                         <div class="text-message py-3 px-4">{{contacts[activeContact].messages[index].message}}</div>
-                        <i class="fa-solid fa-chevron-down" @click="toggleDropDown($event)"></i>
+                        <i class="fa-solid fa-chevron-down" @click="toggleDropDown($event)"></i><!--toggler of dropdown menu-->
                         <div class="dropdown">
                             <div class="d-flex flex-column">
-                                <span class="p-3">Message info</span>  
-                                <span class="p-3" @click="deleteMessage(index,activeContact)">Delete message</span>
+                                <span class="p-3">Message info</span>  <!-- useless for now-->
+                                <span class="p-3" @click="deleteMessage(index,activeContact)">Delete message</span><!-- deleting message: bug on the last one-->
                             </div>
                         </div>
                         <small class="time">15:30</small> <!-- to  be changed dynamic-->

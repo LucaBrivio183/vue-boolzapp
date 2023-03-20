@@ -203,7 +203,7 @@ createApp ({
                 }
                 this.contacts[activeContact].messages.push(newMessage)
         },
-        search() {
+        search() { //checking for matching and hiding the unmatching ones
             this.contacts.forEach((contact) => {
                 if (contact.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
                    contact.visible = true
@@ -212,18 +212,14 @@ createApp ({
                 }
             })
         },
-        getLastMessage(messages){
-            if ( messages[messages.length]  !=  0 ) {
-                const lastMessage = messages[messages.length - 1];
-                return `${lastMessage.message}`;
-            } else {
-                return ``;
-            }
+        getLastMessage(messages){//getting last message to show under correct contact
+            const lastMessage = messages[messages.length - 1];
+            return `${lastMessage.message}`;
         },
-        toggleDropDown(event){
+        toggleDropDown(event){ //toggle class for showing dropdown menu
             event.target.nextElementSibling.classList.toggle('show');  
         },
-        deleteMessage(index,activeContact){
+        deleteMessage(index,activeContact){  //deleting the corrisponding message
             this.contacts[activeContact].messages.splice(index, 1);
         },
     },
