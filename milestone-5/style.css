@@ -176,8 +176,9 @@ small {
     display: initial;
 }
 
-#active-chat .dropdown {
+.dropdown {
     position: absolute;
+    display: none;
     z-index: 2;
     right: .3125rem;
     top: 2rem;
@@ -187,3 +188,6 @@ small {
     border-radius: 5px;
 }
 
+.show {
+    display: flex;
+}

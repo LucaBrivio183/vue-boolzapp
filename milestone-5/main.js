@@ -6,7 +6,6 @@ createApp ({
             activeContact: 0, //variable index for checking the right active contact
             message: '',  //messagge sendable linked to chat input field
             searchKey: '', //search text input listener
-            showDropDown: false,
             user: { //user info
                 name:'Sofia',
                 img: '../img/avatar_io.jpg',
@@ -217,8 +216,8 @@ createApp ({
             const lastMessage = messages[messages.length - 1]
             return `${lastMessage.message}`  
         },
-        toggleDropDown(){
-            this.showDropDown = !this.showDropDown
+        toggleDropDown(event){
+                event.target.nextElementSibling.classList.toggle('show')   
         },
     },
 }).mount('#app');
