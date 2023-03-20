@@ -191,3 +191,8 @@ small {
 .show {
     display: flex;
 }
+
+.dropdown span:hover {
+    background-color: #e9ebeb;
+    cursor: pointer; 
+}
