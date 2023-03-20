@@ -104,6 +104,11 @@ span,a {
     padding: 0 .3125rem;
     font-size: 1rem;
     line-height: 1rem;
+    text-overflow: ellipsis;
+}
+
+a:hover{
+    cursor: pointer;
 }
 
 #contact-list li:hover {
@@ -130,6 +135,8 @@ main footer {
     border-radius: 15px;
     width: 40%;
     position: relative;
+    text-overflow: ellipsis;
+    min-width: fit-content;
 }
 
 #active-chat .sent {
