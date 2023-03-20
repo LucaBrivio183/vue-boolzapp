@@ -206,7 +206,7 @@ createApp ({
         search() {
             this.contacts.forEach((item) => {
                 if (item.name.toLowerCase().includes(this.searchKey.toLowerCase())) {
-                    item.visible = true
+                   item.visible = true
                 } else {
                     item.visible = false
                 }

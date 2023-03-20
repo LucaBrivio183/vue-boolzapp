@@ -47,13 +47,13 @@
                     <input type="text" v-model="searchKey" @keyup="search" class="flex-grow-1 px-4 py-1" placeholder="Cerca o inizia una nuova chat" id="search-chat">
                 </div>
                 <ul id="contact-list" class="flex-grow-1 d-flex flex-column">
-                    <li v-for="(item,index) in contacts"  v-show="item.visible" @click="selectChat(index,$event)" class="d-flex justify-content-between align-items-start gap-1 ps-4 py-1 border-1 border-bottom border-opacity-25 border-secondary">
+                    <li v-for="(contact,index) in contacts"  v-show="item.visible" @click="selectChat(index,$event)" class="d-flex justify-content-between align-items-start gap-1 ps-4 py-1 border-1 border-bottom border-opacity-25 border-secondary">
                         <div class="user-img"> <!-- contact img -->
-                            <img :src="contacts[index].avatar" alt="">
+                            <img :src="contact.avatar" alt="">
                         </div>
                         <div class="flex-grow-1 d-flex flex-column">
                             <span class="">{{contacts[index].name}}</span><!-- contact name -->
-                            <small class="">{{ getLastMessage(item.messages) }}</small>
+                            <small class="">{{ getLastMessage(contact.messages) }}</small>
                         </div>
                         <small class="">12:00</small>
                     </li>
@@ -80,6 +80,13 @@
                     <!-- message template copied for each message -->
                     <div v-for="(item,index) in contacts[activeContact].messages" :class="checkMessageStatus(index,activeContact)" class="message sent py-3 px-4">
                         {{contacts[activeContact].messages[index].message}}
+                        <div class="dropdown">
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <div class="dropdown-option">
+                                <span>Delete message</span>  
+                                <span>Delete message</span>
+                            </div>
+                        </div>
                         <small class="time">15:30</small> <!-- to  be changed dynamic-->
                     </div>
                 </div>
